@@ -1,0 +1,123 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Verdana;
+}
+
+body {
+    text-align: center;
+}
+
+ol {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    width: 80%;
+    margin: 2em auto 0 auto;
+}
+
+ol li {
+    text-align: center;
+    width: 7.4%;
+    height: 48px;
+    font-size: 24px;
+    padding: 0.5em 0;
+    margin-right: 0.9090909090909090901%;
+    margin-bottom: 0.9090909090909090901%;
+    background-color: rgba(33, 33, 33, 1);
+    color: white;
+    transform: scale(0.7);
+    opacity: 0.5;
+    display: none;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+form {
+    padding: 0.5em 1em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1em;
+}
+
+label {
+    padding: 0.5em 1em;
+    border: 1px solid rgb(55, 55, 55);
+    color: rgb(55, 55, 55);
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.3em;
+    margin-bottom: 0.3em;
+    transition: all 0.2s;
+}
+
+/*  Main Functionality Of The Table  */
+
+label:not(.simple):hover {
+    background-color: rgb(55, 55, 55);
+    color: rgba(255, 255, 255, 1);
+}
+
+input[type="radio"]:checked + label {
+    background-color: rgb(55, 55, 55);
+    color: rgba(255, 255, 255, 1);
+}
+
+input[value="2"]:checked ~ ol li:nth-child(2n),
+input[value="3"]:checked ~ ol li:nth-child(3n),
+input[value="4"]:checked ~ ol li:nth-child(4n),
+input[value="5"]:checked ~ ol li:nth-child(5n),
+input[value="6"]:checked ~ ol li:nth-child(6n),
+input[value="7"]:checked ~ ol li:nth-child(7n),
+input[value="8"]:checked ~ ol li:nth-child(8n),
+input[value="9"]:checked ~ ol li:nth-child(9n),
+input[value="10"]:checked ~ ol li:nth-child(10n),
+input[value="11"]:checked ~ ol li:nth-child(11n),
+input[value="12"]:checked ~ ol li:nth-child(12n) {
+    opacity: 1;
+    transform: scale(1);
+    display: inline-block;
+}
+
+h1 {
+    display: block;
+    width: 100%;
+    font-size: 2.5em;
+    text-align: center;
+    padding: 1.5em 0;
+    font-weight: 700;
+    background-color: rgb(33, 33, 33);
+    color: white;
+    margin-bottom: 0.5em;
+}
+
+.simple {
+    border: none;
+    margin-left: 2em;
+    cursor: auto;
+}
+
+.simple + input {
+    padding: 0.5em 1em;
+}
+
+input[type="checkbox"] {
+    width: 1.5em;
+    height: 1.5em;
+    display: inline-block;
+}
+
+.display {
+    display: block;
+}
+
+input[type="checkbox"]:checked ~ form ol li {
+    display: block;
+}
